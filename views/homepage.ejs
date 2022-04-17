@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/css/stylesHomepage.css" />
+
+<div class="wrapper">
+  <nav>
+    <section class="title">UpNote</section>
+    <section class="content">
+      <section id="login-button">
+        <%if (!user) { %>
+          <form action="/login" method="get">
+            <button type="submit">Login</button>
+          </form>
+          <% }else{ %>
+              <form action="/logout" method="get">
+                  <button type="submit">Log Out</button>
+              </form>
+              <%}%>
+        <p>
+            One stop for all your academic needs
+        </p>
+      </section>
+      <section id="site-buttons">
+        <form action="/notes" method="get">
+          <p>Notes - For the community, By the community</p>
+          <button type="submit">Get notes</button>
+        </form>
+        <form action="/forum" method="get">
+          <p>Get answers to all your doubts, from the UpNote community</p>
+          <button type="submit">Search The forum</button>
+        </form>
+      </section>
+    </section>
+  </nav>
+</div>

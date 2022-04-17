@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: CarbonPersonalUse;
+    src: url(CarbonPersonalUseBold-VGedw.ttf);
+}
+
+html {
+    color: #000d10;
+    font-size: 1.125rem;
+    font-family: CarbonPersonalUse;
+    line-height: 1.6111111111;
+}
+
+button {
+    color: var(--color);
+    transition: 0.5s;
+}
+  button:hover, button:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+
+.wrapper{
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #E78EA9, #eeeeee2c);
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "title loginButton"
+                        "searchBar searchBar";
+}
+
+nav .title{
+    grid-area: title;
+    margin-left: 3vw;
+    font-size: 5vh;
+    font-weight: 500;
+    color: white;
+    text-shadow: 3px 3px #9c6072;
+}
+
+nav .login-button{
+    grid-area: loginButton;
+    margin-right: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   
+}
+
+nav .login-button button{
+    font-size: larger;
+    font-family: CarbonPersonalUse;
+    background-color: transparent;
+    border: transparent;
+    color: #000000;
+    margin-top: 10px;
+    padding: 1.5vh;
+    border-radius: 3px;
+}
+
+nav .login-button button:hover{
+    background-color: #393e4667;
+    color: #ffffff;
+}
+
+nav .search{
+    grid-area: searchBar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .search input{
+    width: 50vw;
+    height: 4vh;
+    border: 0;
+    background: rgba(255, 255, 255, 0.575);
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+nav .search input:focus{
+    outline: none;
+    box-shadow: 0 0 5pt 2pt #a8a8a84d;
+}
+
+nav .search button{
+    font-family: CarbonPersonalUse;
+    border: 0;
+    border-radius: 5px;
+    width: 8vh;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.575);
+    /* border-radius: 15px; */
+    margin-top: 1vh;
+}
+
+nav .search button:hover{
+    background-color: #d3839b;
+    color: white;
+}
+
+nav .search form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-button button{
+    position: fixed;
+    top: 90vh;
+    left: 80vw;
+    font-size: larger;
+    font-family: CarbonPersonalUse;
+    background-color: #ffb1c8;
+    border: 0;
+    border-left: 6px solid #d3839b;
+    color: #000000;
+    padding: 10px;
+    --hover: #d3839b;
+}
+
+.post-button button:hover{
+    /* /* background-color: rgb(55, 126, 150); */
+    color: #ffffff; 
+    box-shadow: inset 8em 0 0 0 var(--hover);
+}

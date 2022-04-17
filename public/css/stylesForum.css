@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: CarbonPersonalUse;
+    src: url(CarbonPersonalUseBold-VGedw.ttf);
+}
+
+html {
+    color: #000d10;
+    font-size: 1.125rem;
+    font-family: CarbonPersonalUse;
+    line-height: 1.6111111111;
+}
+
+button {
+    color: var(--color);
+    transition: 0.5s;
+}
+  button:hover, button:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+
+.wrapper{
+    background-size: 100% 100%;
+    height:100%;
+    background-image: linear-gradient(to bottom, #B9F8D3, #eeeeee2c);
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "title loginButton"
+                        "searchBar searchBar";
+}
+
+nav .title{
+    grid-area: title;
+    margin-left: 3vw;
+    font-size: 5vh;
+    font-weight: 500;
+    color: white;
+    text-shadow: 3px 3px #5edf4d;
+}
+
+nav .login-button{
+    grid-area: loginButton;
+    margin-right: 3vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    justify-content: right;  
+}
+
+nav .login-button button{
+    font-size: larger;
+    font-family: CarbonPersonalUse;
+    background-color: transparent;
+    border: transparent;
+    color: #000000;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 1.5vh;
+    border-radius: 3px;
+}
+
+nav .login-button button:hover{
+    background-color: #393e4667;
+    color: #ffffff;
+}
+
+nav .search{
+    grid-area: searchBar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .search input{
+    width: 50vw;
+    height: 4vh;
+    border: 0;
+    background: rgba(255, 255, 255, 0.575);
+    border-radius: 15px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+nav .search input:focus{
+    outline: none;
+    box-shadow: 0 0 5pt 2pt #a8a8a84d;
+}
+
+nav .search button{
+    font-family: CarbonPersonalUse;
+    border: 0;
+    border-radius: 5px;
+    width: 8vh;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.575);
+    margin-top: 1vh;
+}
+
+nav .search button:hover{
+    background-color: #49ad3c;
+    color: white;
+}
+
+nav .search form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-button button{
+    position: fixed;
+    top: 90vh;
+    left: 80vw;
+    font-size: larger;
+    font-family: CarbonPersonalUse;
+    background-color: #B9F8D3;
+    border: 0;
+    border-left: 6px solid #4bb33d;
+    color: #000000;
+    padding: 10px;
+    --hover: #4bb33d;
+}
+
+.post-button button:hover{
+    color: #ffffff; 
+    box-shadow: inset 8em 0 0 0 var(--hover);
+}
+
+.results{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.results #post{
+    display: grid;
+    grid-area: post;
+    grid-template-areas: "question answer"
+                        "author author";
+    background-color: #FFFBE7;
+    padding: 3vh;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 90vw;
+    border-radius: 1.5vh;
+    /* grid-template-rows: 75% 25%; */
+}
+
+.results #post #question{
+    grid-area: question;
+} 
+.results #post #author{
+    grid-area: author;
+} 
+.results #post #answer-button{
+    grid-area: answer-button;
+} 
+
+.results #post #answer-button button{
+    background-color: #B9F8D3;
+    border: 0;
+    border-left: 6px solid #4bb33d;
+    color: #000000;
+    padding: 10px;
+    --hover: #4bb33d;
+}
+.results #post #answer-button button:hover{
+    color: #ffffff; 
+    box-shadow: inset 8em 0 0 0 var(--hover);
+}

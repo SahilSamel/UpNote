@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/stylesForum.css"/>
+
+<div class="wrapper">
+    <section class="question">
+        <%= question%>
+        <br>
+        <%= author%>
+    </section>
+    <section class="postanswer">
+        <form action="/forum/answerpost/answer" method="post">
+            <input type="text" name="youranswer">
+            <input type="submit" value="Post">
+        </form>
+    </section>
+    <section class="answers">
+        <% for(let i=0; i< posts[i].answers.length; i++){ %>
+                <%= posts[0].answers[i].answer %>
+                Posted By :-
+                <%= posts[0].answers[i].answered_by %>
+                Answered on:-  
+                <%= posts[0].answers[i].date %>                
+        <%} %>
+    </section>
+</div>

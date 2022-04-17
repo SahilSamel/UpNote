@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/stylesnotes.css" />
+
+<div class="wrapper">
+  <nav>
+    <section class="title">UpNote</section>
+    <section class="login-button">
+      <%if (!user) { %>
+        <form action="/login" method="get">
+          <button type="submit">Login</button>
+        </form>
+        <% }else{ %>
+            <form action="/logout" method="get">
+                <button type="submit">Log Out</button>
+            </form>
+            <%}%>
+    </section>
+    <section class="search">
+      <form method="get">
+        <input type="search" name="search" placeholder="Search for Notes" />
+        <button type="submit">Search</button>
+      </form>
+    </section>
+  </nav>
+  <article class="results"></article>
+  <section class="post-button">
+    <form action="/notes/newnote" method="get">
+      <button type="submit">Post Notes</button>
+    </form>
+  </section>
+</div>

@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/css/stylesForum.css" />
+
+<script>
+  function setInputValue(input_id, val) {
+    document.getElementById(input_id).setAttribute('value', val);
+  }
+</script>
+
+<div class="wrapper">
+    <nav>
+        <section class="title">UpNote</section>
+        <section class="login-button">
+          <%if (!user) { %>
+            <form action="/login" method="get">
+              <button type="submit">Login</button>
+            </form>
+            <% }else{ %>
+                  <form action="/forum/myquestions" method="get">
+                        <button type="submit">My Questions</button>
+                  </form>
+                  <form action="/logout" method="get">
+                        <button type="submit">Log Out</button>
+                  </form>
+                  <%}%>
+        </section>
+        <section class="search">
+            <form method="get">
+              <input type="search" name="search" placeholder="Search the forum" />
+              <button type="submit">Search</button>
+            </form>
+        </section>
+  </nav>
+
+  <p style="text-align: center; color: black;">Latest Posts</p>
+  <article class="results">
+    <% for(let i=0; i< posts.length; i++){ %>
+      <section id="post">
+        <section id="question">
+          <%= posts[i].question %>
+        </section>
+        <section id="author">
+          Posted By :-
+          <%= posts[i].author %>
+        </section>
+        <section id="answer-button">
+          <form action="/forum/answerpost" method="post">
+            <input type="text" id="question" name="question" hidden value="<%=posts[i].question %>">
+            <input type="text" id="author" name="author" hidden value="<%=posts[i].author %>">
+            <button type="submit">Answer</button>
+          </form>
+          
+        </section>
+
+      </section>
+    <%} %>
+  </article>
+
+  <section class="post-button">
+    <form action="/forum/newquestion" method="get">
+      <button type="submit">Post Question</button>
+    </form>
+  </section>
+</div>
