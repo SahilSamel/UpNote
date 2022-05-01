@@ -180,3 +180,80 @@ nav .search form{
     color: #ffffff; 
     box-shadow: inset 8em 0 0 0 var(--hover);
 }
+
+.wrapper .postform form input{
+    width: 50vw;
+    height: 4vh;
+    border: 0;
+    background: rgba(231, 231, 231, 0.705);
+    border-radius: 6px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.wrapper .postform input:focus{
+    outline: none;
+    box-shadow: 0 0 5pt 2pt #a8a8a84d;
+}
+
+.wrapper .postform button{
+    font-family: CarbonPersonalUse;
+    border: 0;
+    border-radius: 5px;
+    width: 8vh;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.575);
+    margin-top: 1vh;
+}
+
+.wrapper .postform button:hover{
+    background-color: #49ad3c;
+    color: white;
+}
+
+.wrapper .postanswer form input{
+    width: 50vw;
+    height: 4vh;
+    border: 0;
+    background: rgba(255, 255, 255, 0.575);
+    border-radius: 6px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.wrapper .postanswer input:focus{
+    outline: none;
+    box-shadow: 0 0 5pt 2pt #a8a8a84d;
+}
+
+.wrapper .postanswer button{
+    font-family: CarbonPersonalUse;
+    border: 0;
+    border-radius: 5px;
+    width: 8vh;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.575);
+    margin-top: 1vh;
+}
+
+.wrapper .postanswer button:hover{
+    background-color: #49ad3c;
+    color: white;
+}
+
+.wrapper .answers{
+    margin: 15px;
+    margin-bottom: 10vw;
+}
+
+.answers #answer{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: small;
+    margin-bottom: 2.5vw;
+    background-color: #ffffff62;
+    padding: 7px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}

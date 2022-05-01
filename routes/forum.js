@@ -95,7 +95,8 @@ router.post(
                 answers:
                     {
                         "answered_by": req.user.full_name,
-                        "answer":req.body.youranswer
+                        "answer":req.body.youranswer,
+                        "date":req.body.date_answered
                     }
                 }
             }

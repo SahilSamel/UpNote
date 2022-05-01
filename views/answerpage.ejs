@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="/css/stylesForum.css"/>
 
-<% var myDateString = Date("YYYY-mm-dd"); %>
+<% var myDateString = new Date("YYYY-mm-dd"); %>
 
 <div class="wrapper">
     <section class="question">
         <%= question%>
         <br>
+        Posted by:-
         <%= author%>
     </section>
     <section class="postanswer">
@@ -19,14 +20,13 @@
     </section>
     <section class="answers">
         <% for(let i=0; i< posts[0].answers.length; i++){ %>
-            <%= posts[0].answers[i].answer %>
-            <br>
-            Posted By :-
-            <%= posts[0].answers[i].answered_by %>
-            <br>
-            Answered on:-   
-            <br>              
-        <%} %>
-        
+            <section id="answer">
+                <%= posts[0].answers[i].answer %>
+                <br>
+                Posted By :-
+                <%= posts[0].answers[i].answered_by %>
+                <br>             
+            </section>
+        <%} %>       
     </section>
 </div>
