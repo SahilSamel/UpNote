@@ -33,7 +33,6 @@ router.post(
     "/newquestion",
     checkAuthentication,
     (req,res) =>{
-        console.log(req.body)
         const author = req.user.full_name;
         const question = req.body.question;
         const newquestion = new forum(
@@ -47,8 +46,6 @@ router.post(
                 res.redirect("/forum")
             }
         )
-
-
     }
 )
 
@@ -86,10 +83,27 @@ router.post(
 )
 
 router.post(
-    "/answerquestion/answer",
+    "/answerpost/answer",
     checkAuthentication,
     (req,res) =>{
-        
+        forum.findOneAndUpdate(
+            {
+                question:req.body.question
+            },
+            {
+                $addToSet:{
+                answers:
+                    {
+                        "answered_by": req.user.full_name,
+                        "answer":req.body.youranswer
+                    }
+                }
+            }
+        ).then(
+            (user,req) => {
+                res.redirect("/forum")
+            }
+        )
     }
 )
 module.exports = router;

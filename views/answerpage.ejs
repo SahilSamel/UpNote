@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="/css/stylesForum.css"/>
 
+<% var myDateString = Date("YYYY-mm-dd"); %>
+
 <div class="wrapper">
     <section class="question">
         <%= question%>
@@ -8,17 +10,23 @@
     </section>
     <section class="postanswer">
         <form action="/forum/answerpost/answer" method="post">
+            <input type="text" name="question" value="<%= question%>" hidden>
+            <input type="text" name="authorofquestion" value="<%= author %>" hidden>
+            <input type="date" name="date_answered" value="myDateString" hidden>
             <input type="text" name="youranswer">
-            <input type="submit" value="Post">
+            <button type="submit">Answer</button>
         </form>
     </section>
     <section class="answers">
-        <% for(let i=0; i< posts[i].answers.length; i++){ %>
-                <%= posts[0].answers[i].answer %>
-                Posted By :-
-                <%= posts[0].answers[i].answered_by %>
-                Answered on:-  
-                <%= posts[0].answers[i].date %>                
+        <% for(let i=0; i< posts[0].answers.length; i++){ %>
+            <%= posts[0].answers[i].answer %>
+            <br>
+            Posted By :-
+            <%= posts[0].answers[i].answered_by %>
+            <br>
+            Answered on:-   
+            <br>              
         <%} %>
+        
     </section>
 </div>
